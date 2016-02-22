@@ -22,10 +22,10 @@ def send_mail(from_addr, to_addr, cc_addr, subject, text):
 
     msg = MIMEText(text.encode(charset), "plain", charset)
     msg["Subject"] = Header(subject,charset)
-    msg["From"]    = from_addr
-    msg["To"]      = to_addr
-    msg["Cc"]      = cc
-    msg["Date"]    = formatdate(localtime = True)
+    msg["From"] = from_addr
+    msg["To"] = to_addr
+    msg["Cc"] = cc
+    msg["Date"] = formatdate(localtime = True)
 
     smtp = smtplib.SMTP("localhost")
     smtp.sendmail(from_addr,to_addr,msg.as_string())
